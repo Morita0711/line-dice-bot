@@ -218,11 +218,6 @@ const hook = (req: express.Request, res: express.Response) => {
 
 router.post("/webhook", middleware(config), hook);
 
-/* router.post("/webhook-test", (req:express.Request, res:express.Response)=>{
-	const body = req.body
-	res.status(200).send('');
-}) */
-
 const getDiceImage = async (text: string) => {
 	if (text.length === 3) {
 		const w = 800
@@ -845,17 +840,7 @@ const getOrCreateUser = async (userId: string) => {
 			console.log('profile', profile)
 		} catch (error) {
 			console.log(error)
-		}
-
-		/* .then((profile) => {
-			console.log(profile.displayName);
-			console.log(profile.userId);
-			console.log(profile.pictureUrl);
-			console.log(profile.statusMessage);
-		})
-		.catch((err) => {
-			// error handling
-		}); */
+			
 		const user = {
 			id,
 			userId,

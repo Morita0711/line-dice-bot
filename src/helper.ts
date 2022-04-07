@@ -152,7 +152,6 @@ const DLN:DATELANGS={
 export const getDateText=(lang:keyof DATELANGS,value:number,isPast:boolean,unit?:keyof DATEFIELDS):string=>{
 	const ln:DATEFIELDS = DLN[lang];
 	if(unit=='seconds') return ln.seconds;
-	/* if(value>1) unit+='s'; */
 	let s='';
 	if(!isPast && ln.prefixAgo) s+=ln.prefixAgo+ln.wordSeparator;
 	if(isPast && ln.prefixFromNow) s+=ln.prefixFromNow+ln.wordSeparator;
